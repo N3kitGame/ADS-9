@@ -4,14 +4,13 @@
 #include  <locale>
 #include  <cstdlib>
 #include  "bst.h"
-using namespace std;
 
 BST<std::string> makeTree(const char* filename) {
-    ifstream file(filename);
+    std::ifstream file(filename);
     if (!file.is_open()) {
         throw std::string("ERROR!");
     }
-    string word = "";
+    std::string word = "";
     BST<std::string> bst;
     while (!file.eof()) {
         word = "";
