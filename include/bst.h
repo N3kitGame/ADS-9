@@ -4,7 +4,6 @@
 
 template<typename T>
 class BST {
-
  public:
     BST() :root(nullptr) {}
     void AddValue(const T& value) {
@@ -35,17 +34,13 @@ class BST {
                 root->left = nullptr;
                 root->right = nullptr;
                 root->count = 1;
-            }
-            else if (root->value > value) {
+            } else if (root->value > value) {
                 root->left = addNode(root->left, value);
-            }
-            else if (root->value < value) {
+            } else if (root->value < value) {
                 root->right = addNode(root->right, value);
-            }
-            else if (root->value < value) {
+            } else if (root->value < value) {
                 root->left = addNode(root->left, value);
-            }
-            else {
+            } else {
                 root->count++;
             }
             return(root);
@@ -56,14 +51,11 @@ class BST {
             if (!root) {
                 if (root == nullptr) {
                     return 0;
-                }
-                else if (root->value < value) {
+                } else if (root->value < value) {
                     return searchNode(root->left, value);
-                }
-                else if (root->value > value) {
+                } else if (root->value > value) {
                     return searchNode(root->right, value);
-                }
-                else if (root->value == value) {
+                } else if (root->value == value) {
                     return root->count;
                 }
                 return 0;
@@ -76,8 +68,7 @@ class BST {
                 int leftTree = getDepth(root->left);
                 if (rightTree > leftTree) {
                     return rightTree + 1;
-                }
-                else {
+                } else {
                     return leftTree + 1;
                 }
             }
